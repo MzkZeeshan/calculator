@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="audio" src="http://dev.interactive-creation-works.net/1/1.ogg" ></audio>
+    <label>Enter Your Age</label>
+    <input  type="text" id="age" placeholder="Enter Your Age"/>
+    
+    <button onclick="a()"  > Next</button>
+
+
+
+
+
+</div>
+
+
+</body>
+<script>
+function a()
+
+{
+   
+    var str = document.getElementById('age').value
+    
+    var patt1 = /[0-9]/g;
+  var result = str.match(patt1)
+  if(result)
+  {
+      console.log(result.join().replace(/,/g,""))
+    localStorage.setItem("age", result.join().replace(/,/g,""));
+
+    // console.log("chal gaya",result.toString())
+    location.replace('cal.html')
+  }else
+  {
+      alert("Please fill field or Enter only a number")
+  }
+}
+</script>
+</html> 
