@@ -10,6 +10,13 @@
 <body id="id1">
     <form name="sci-calc">
         <table class="calculator" cellspacing="0" cellpadding="1">
+            <tr>
+                <td colspan="3">Touch sound</td>
+                <td colspan="2"><input type="button" id="1" value="ON" style="color:blue"
+                  onclick="toggle();"></td>
+              </tr>
+              <tr>
+
           <tr>
             <td colspan="5"><input id="display" name="display" value="0" size="28" maxlength="25"></td>
           </tr>
@@ -56,18 +63,23 @@
           <tr>
             
         
-            <td><input type="button" class="btnMath" name="btnMath" value="cos" onclick="if(checkNum(this.form.display.value)) { cos(this.form) }"></td>
-            <td><input type="button" class="btnMath" name="btnMath" value="sin" onclick="if(checkNum(this.form.display.value)) { sin(this.form) }"></td>
-            <td><input type="button" class="btnMath" name="btnMath" value="tan" onclick="if(checkNum(this.form.display.value)) { tan(this.form) }"></td>
-            <td><input type="button" class="btnTop" name="btnTop" value="=" onclick="if(checkNum(this.form.display.value)) { compute(this.form) }"></td>
+            <td><input type="button" class="btnMath" name="btnMath" value="Bin" onclick="if(checkNum(this.form.display.value)) {
+             as('b.wav')
+             this.form.display.value= (parseInt(this.form.display.value)).toString(2) 
+              }"></td>
+            <td><input type="button" class="btnMath" name="btnMath" value="Oct" onclick="if(checkNum(this.form.display.value)) { as('b.wav') 
+            this.form.display.value= (parseInt(this.form.display.value)).toString(8)  }"></td>
+            <td><input type="button" class="btnMath" name="btnMath" value="Hex" onclick="if(checkNum(this.form.display.value)) { as('b.wav') this.form.display.value= (parseInt(this.form.display.value)).toString(16) }"></td>
+            <td><input type="button" class="btnTop" name="btnTop" value="=" onclick="if(checkNum(this.form.display.value)) {compute(this.form) }"></td>
             
             <td><input type="button" class="btnMath" name="btnMath" value="%" onclick=" percent(this.form.display)"></td>
          </tr>
         </tabel>
-        <audio id="sound" src="b.wav"  autoplay="autoplay">   
-          <source src="b.wav" />   
-          </audio>  
+   
        </form>
+       <audio id="sound" src="c.wav"  autoplay="autoplay">   
+          <source src="c.wav" />   
+          </audio> 
 </body>
 <script src="./script.js"></script>
 </html>
